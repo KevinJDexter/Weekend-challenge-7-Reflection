@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import {connect} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 class SubmitButton extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   submitAndContinue = () => {
+    const action = {
+      type: this.props.actionType,
+      payload: this.props.value
+    }
+    this.props.dispatch(action);
     this.props.history.push('/5');
   }
 
@@ -17,4 +18,4 @@ class SubmitButton extends Component {
   }
 }
 
-export default SubmitButton;
+export default connect()(SubmitButton);
