@@ -24,7 +24,7 @@ class Feeling extends Component {
       <div>
         <ProgressBar page="1" />
         <h3>How are you feeling today?</h3>
-        <FeedbackInput value={this.state.feeling} handleChange={this.handleChange} />
+        <FeedbackInput value={this.state.feeling} handleChange={this.handleChange} type="number" />
         <NextPageButton path="/2" history={this.props.history} actionType="SUBMIT_FEELING" value={this.state.feeling} />
       </div>
     )

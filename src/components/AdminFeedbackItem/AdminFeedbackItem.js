@@ -7,7 +7,7 @@ const AdminFeedbackItem = (props) => (
     <td>{props.item.understanding}</td>
     <td>{props.item.support}</td>
     <td>{props.item.comments}</td>
-    <td><AdminFeedbackItemDeleteButton /></td>
+    <td><AdminFeedbackItemDeleteButton id={props.item.id} getFeedback={props.getFeedback}/></td>
     </tr>
 )
 

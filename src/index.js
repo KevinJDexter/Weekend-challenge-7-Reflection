@@ -26,8 +26,8 @@ const feedback = (state = {}, action ) => {
   } else if (action.type === 'SUBMIT_SUPPORTED') {
     state.supported = action.payload;
   } else if (action.type === 'SUBMIT_COMMENTS_AND_FINISH') {
-    state.additionalComments = action.payload;
-    // postFeedbackToDatabase(state);
+    state.comments = action.payload;
+    postFeedbackToDatabase(state);
     state = {};
   }
   return state;

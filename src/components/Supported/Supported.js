@@ -24,7 +24,7 @@ class Supported extends Component {
       <div>
         <ProgressBar page="3" />
         <h3>How well do you feel supported?</h3>
-        <FeedbackInput value={this.state.supported} handleChange={this.handleChange} />
+        <FeedbackInput value={this.state.supported} handleChange={this.handleChange} type="text" />
         <NextPageButton path="/4" history={this.props.history} actionType="SUBMIT_SUPPORTED" value={this.state.supported} />
       </div>
     )

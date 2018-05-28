@@ -6,6 +6,7 @@ class AdminFeedbackItemDeleteButton extends Component {
     axios.delete(`/api/feedback/${this.props.id}`)
       .then((response) => {
         console.log(response);
+        this.props.getFeedback();
       })
       .catch((error) => {
         alert('Could not delete feedback item');

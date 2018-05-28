@@ -14,6 +14,7 @@ class Admin extends Component {
   getFeedback = () => {
     axios.get('/api/feedback')
       .then((response) => {
+        console.log(response);
         this.setState ({
           feedback: response.data
         });
@@ -24,13 +25,13 @@ class Admin extends Component {
   }
 
   componentDidMount = () => {
-    // this.getFeedback();
+    this.getFeedback();
   }
 
   render() {
     return (
       <div>
-        <table>
+        <table style={{margin: "auto"}}>
           <thead>
             <tr>
               <td>Feeling</td>
@@ -41,7 +42,7 @@ class Admin extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.feedback.map(item => <AdminFeedbackItem item={item} />)}
+            {this.state.feedback.map(item => <AdminFeedbackItem item={item} getFeedback={this.getFeedback}/>)}
           </tbody>
         </table>
       </div>

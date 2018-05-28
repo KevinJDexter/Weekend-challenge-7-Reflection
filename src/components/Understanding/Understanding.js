@@ -24,7 +24,7 @@ class Understanding extends Component {
       <div>
         <ProgressBar page="2"/>
         <h3>How well are you understanding the material?</h3>
-        <FeedbackInput value={this.state.understanding} handleChange={this.handleChange} />
+        <FeedbackInput value={this.state.understanding} handleChange={this.handleChange} type="number" />
         <NextPageButton path="/3" history={this.props.history} actionType="SUBMIT_UNDERSTANDING" value={this.state.understanding}/>
       </div>
     )
